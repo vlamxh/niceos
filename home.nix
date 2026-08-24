@@ -4,7 +4,7 @@
 {
   # Set your home.stateVersion. This is important for future Home Manager upgrades.
   # Use the current NixOS release version or a recent one.
-  home.stateVersion = "25.11"; # Example: Use the same as your home-manager flake URL release
+  home.stateVersion = "26.05"; # Example: Use the same as your home-manager flake URL release
 
   home.username = systemUsername;
   home.homeDirectory = "/home/${systemUsername}";
