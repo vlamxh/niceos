@@ -35,7 +35,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   #Mesa-git via ChaoticNyx
-  chaotic.mesa-git.enable = true;
+  chaotic.mesa-git.enable = false;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -57,7 +57,7 @@
   ];
 
   # Set your time zone.
-  time.timeZone = "Europe/London";
+  time.timeZone = "America/Arizona";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -89,7 +89,7 @@
   };
 
   # Configure console keymap
-  console.keyMap = "uk";
+  console.keyMap = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -160,7 +160,17 @@
     ];
   };
 
-  services.xserver.videoDrivers = ["amdgpu"];
+  services.xserver.videoDrivers = ["nvidia"];
+
+  hardware.nvidia.open = false;
+
+{
+  hardware.nvidia.prime = {
+    #intelBusId = "PCI:0@0:2:0";
+    #nvidiaBusId = "PCI:1@0:0:0";
+    #amdgpuBusId = "PCI:5@0:0:0"; # If you have an AMD iGPU
+  };
+}
 
   # Garbage Collection
   nix.gc = {
